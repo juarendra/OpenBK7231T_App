@@ -1219,6 +1219,7 @@ void Main_ForceUnsafeInit() {
 void Main_Init_Before_Delay()
 {
 	ADDLOGF_INFO("Main_Init_Before_Delay");
+	ADDLOGF_INFO("test gspe");
 	// read or initialise the boot count flash area
 	HAL_FlashVars_IncreaseBootCount();
 
