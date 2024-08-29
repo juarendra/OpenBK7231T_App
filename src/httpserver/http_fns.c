@@ -843,7 +843,7 @@ typedef enum {
 	}
 #endif
 	if (CFG_GetMQTTHost()[0] == 0) {
-		hprintf255(request, "<h5>MQTT State: not configured<br>");
+		hprintf255(request, "<h5>MQTT State Testing1: not configured<br>");
 	}
 	else {
 		const char* stateStr;
@@ -860,7 +860,7 @@ typedef enum {
 			stateStr = "disconnected";
 			colorStr = "yellow";
 		}
-		hprintf255(request, "<h5>MQTT State: <span style=\"color:%s\">%s</span> RES: %d(%s)<br>", colorStr,
+		hprintf255(request, "<h5>MQTT State Testing2: <span style=\"color:%s\">%s</span> RES: %d(%s)<br>", colorStr,
 			stateStr, MQTT_GetConnectResult(), get_error_name(MQTT_GetConnectResult()));
 		hprintf255(request, "MQTT ErrMsg: %s <br>", (MQTT_GetStatusMessage() != NULL) ? MQTT_GetStatusMessage() : "");
 		hprintf255(request, "MQTT Stats:CONN: %d PUB: %d RECV: %d ERR: %d </h5>", MQTT_GetConnectEvents(),
