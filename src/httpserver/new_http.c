@@ -36,7 +36,7 @@ const char htmlBodyStart[] =
 "<noscript>To use this device, please enable JavaScript.<br></noscript>"
 "<div id=\"main\">"
 "<h1>"
-"<a target=\"_blank\" href=\"https://github.com/openshwprojects/OpenBK7231T_App/\">";
+"<a target=\"_blank\" href=\"https://www.gspe.co.id/\">";
 const char htmlBodyStart2[] =
 "</a></h1>";
 const char htmlBodyEnd[] = "</div></body></html>";
