@@ -917,7 +917,7 @@ typedef enum {
 		poststr(request, "</div>"); // end div#state
 
 		// Shared UI elements 
-		poststr(request, "<form action=\"cfg\"><input type=\"submit\" value=\"Config\"/></form>");
+		//poststr(request, "<form action=\"cfg\"><input type=\"submit\" value=\"Config\"/></form>");
 		postFormAction(request, "cfg_wifi", "Configure WiFi &amp; Web");
 		postFormAction(request, "cfg_ip", "Configure IP");
 		postFormAction(request, "cfg_mqtt", "Configure MQTT");
@@ -936,8 +936,8 @@ typedef enum {
 			poststr(request, "return confirm('Are you sure to try exiting safe mode? NOTE: This will enable rest interface etc, but still wont run autoexec')\">"
 				"</form>");
 		}
-		poststr(request, "<form action=\"/app\" target=\"_blank\"><input type=\"submit\" value=\"Launch Web Application\"></form> ");
-		poststr(request, "<form action=\"about\"><input type=\"submit\" value=\"About\"/></form>");
+		//poststr(request, "<form action=\"/app\" target=\"_blank\"><input type=\"submit\" value=\"Launch Web Application\"></form> ");
+		//poststr(request, "<form action=\"about\"><input type=\"submit\" value=\"About\"/></form>");
 
 		poststr(request, htmlFooterRefreshLink);
 		http_html_end(request);
@@ -974,7 +974,7 @@ int http_fn_cfg_mqtt(http_request_t* request) {
 	add_label_password_field(request, "Password", "password", CFG_GetMQTTPass(), "<br>");
 
 	poststr(request, "<br><input type=\"submit\" value=\"Submit\" onclick=\"return confirm('Are you sure? Please check MQTT data twice?')\"></form> ");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1020,7 +1020,7 @@ int http_fn_cfg_ip(http_request_t* request) {
 	add_label_text_field(request, "Gate", "gate", tmp, "<br>");
 
 	poststr(request, "<br><input type=\"submit\" value=\"Submit\" onclick=\"return confirm('Are you sure? Remember that you need to reboot manually to apply changes')\"></form> ");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1058,7 +1058,7 @@ int http_fn_cfg_mqtt_set(http_request_t* request) {
 	g_mqtt_bBaseTopicDirty = 1;
 
 	poststr(request, "<br><a href=\"cfg_mqtt\">Return to MQTT settings</a><br>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1069,7 +1069,7 @@ int http_fn_cfg_webapp(http_request_t* request) {
 	http_html_start(request, "Set Webapp");
 	add_label_text_field(request, "URL of the Webapp", "url", CFG_GetWebappRoot(), "<form action=\"/cfg_webapp_set\">");
 	poststr(request, SUBMIT_AND_END_FORM);
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1090,7 +1090,7 @@ int http_fn_cfg_webapp_set(http_request_t* request) {
 	}
 
 	poststr(request, "<br>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1151,7 +1151,7 @@ int http_fn_cfg_ping(http_request_t* request) {
 	poststr(request, "<br><br>\
 <input type=\"submit\" value=\"Submit\" onclick=\"return confirm('Are you sure?')\">\
 </form>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1258,7 +1258,7 @@ int http_fn_cfg_wifi(http_request_t* request) {
 	poststr(request, "<br><br>\
 <input type=\"submit\" value=\"Submit\" onclick=\"return confirm('Are you sure? Please check SSID and pass twice?')\">\
 </form>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1295,7 +1295,7 @@ int http_fn_cfg_name(http_request_t* request) {
 	//poststr(request,htmlReturnToCfg);
 	//HTTP_AddBuildFooter(request);
 	//poststr(request,htmlEnd);
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1354,7 +1354,7 @@ int http_fn_cfg_wifi_set(http_request_t* request) {
 		RESET_ScheduleModuleReset(3);
 	}
 	poststr(request, "<br><a href=\"cfg_wifi\">Return to WiFi settings</a><br>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1385,7 +1385,7 @@ int http_fn_cfg_loglevel_set(http_request_t* request) {
 </form>");
 
 	poststr(request, "<br><a href=\"cfg\">Return to config settings</a><br>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1426,7 +1426,7 @@ int http_fn_cfg_mac(http_request_t* request) {
 	poststr(request, "<br><br>\
 <input type=\"submit\" value=\"Submit\" onclick=\"return confirm('Are you sure? Please check MAC hex string twice?')\">\
 </form>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1517,7 +1517,7 @@ int http_fn_cfg_mac(http_request_t* request) {
 //	add_label_numeric_field(request, "Length", "len", len, "<br>");
 //	poststr(request, SUBMIT_AND_END_FORM);
 //
-//	poststr(request, htmlFooterReturnToCfgOrMainPage);
+//	poststr(request, htmlFooterReturnToMainPage);
 //	http_html_end(request);
 //	poststr(request, NULL);
 //	return 0;
@@ -1583,7 +1583,7 @@ int http_fn_cmd_tool(http_request_t* request) {
 	add_label_text_field(request, "Command", "cmd", tmpA, "<form action=\"/cmd_tool\">");
 	poststr(request, SUBMIT_AND_END_FORM);
 
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -1612,7 +1612,7 @@ int http_fn_startup_command(http_request_t* request) {
 	poststr(request, "<input type='hidden' name='startup_cmd' value='1'>");
 	poststr(request, SUBMIT_AND_END_FORM);
 
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -2309,7 +2309,7 @@ int http_fn_ha_cfg(http_request_t* request) {
 
 	poststr(request, "</textarea>");
 	poststr(request, "<br/><div><label for=\"ha_disc_topic\">Discovery topic:</label><input id=\"ha_disc_topic\" value=\"homeassistant\"><button onclick=\"send_ha_disc();\">Start Home Assistant Discovery</button>&nbsp;<form action=\"cfg_mqtt\" class='disp-inline'><button type=\"submit\">Configure MQTT</button></form></div><br/>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, ha_discovery_script);
 	poststr(request, NULL);
@@ -2601,7 +2601,7 @@ int http_fn_cfg_pins(http_request_t* request) {
 	poststr(request, " </script>");
 	poststr(request, "<input type=\"submit\" value=\"Save\"/></form>");
 
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -2728,7 +2728,7 @@ int http_fn_cfg_generic(http_request_t* request) {
 		CFG_GetBootOkSeconds(), "<form action=\"/cfg_generic\">");
 	poststr(request, "<br><input type=\"submit\" value=\"Save\"/></form>");
 
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -2782,7 +2782,7 @@ int http_fn_cfg_startup(http_request_t* request) {
 		}
 	}
 
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -2880,7 +2880,7 @@ int http_fn_cfg_dgr(http_request_t* request) {
 		poststr(request, SUBMIT_AND_END_FORM);
 	}
 
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -2915,7 +2915,7 @@ int http_fn_ota_exec(http_request_t* request) {
 		addLogAdv(LOG_INFO, LOG_FEATURE_HTTP, "http_fn_ota_exec: will try to do OTA for %s \r\n", tmpA);
 		OTA_RequestDownloadFromHTTP(tmpA);
 	}
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
@@ -2929,7 +2929,7 @@ int http_fn_ota(http_request_t* request) {
 	poststr(request, "<br>\
 <input type=\"submit\" value=\"Submit\" onclick=\"return confirm('Are you sure?')\">\
 </form>");
-	poststr(request, htmlFooterReturnToCfgOrMainPage);
+	poststr(request, htmlFooterReturnToMainPage);
 	http_html_end(request);
 	poststr(request, NULL);
 	return 0;
