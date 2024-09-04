@@ -248,7 +248,7 @@ void http_setup(http_request_t* request, const char* type) {
 void http_html_start(http_request_t* request, const char* pagename) {
 	poststr(request, htmlDoctype);
 	poststr(request, "<head><title>");
-	poststr(request, CFG_GetDeviceName());
+	poststr(request, "GSPE_IOT");
 	if (pagename) {
 		hprintf255(request, " - %s", pagename);
 	}
