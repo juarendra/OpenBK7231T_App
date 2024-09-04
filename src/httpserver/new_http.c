@@ -252,7 +252,7 @@ void http_html_start(http_request_t* request, const char* pagename) {
 	poststr(request, htmlHeadStyle);
 	poststr(request, "</head>");
 	poststr(request, htmlBodyStart);
-	poststr(request, "GSPE IOT ");
+	poststr(request, " GSPE IOT ");
 	poststr(request, CFG_GetDeviceName());
 	
 	poststr(request, htmlBodyStart2);
