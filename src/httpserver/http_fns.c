@@ -921,7 +921,7 @@ typedef enum {
 		postFormAction(request, "cfg_wifi", "Configure WiFi &amp; Web");
 		postFormAction(request, "cfg_ip", "Configure IP");
 		postFormAction(request, "cfg_mqtt", "Configure MQTT");
-		postFormAction(request, "cfg_name", "Configure Names");
+		//postFormAction(request, "cfg_name", "Configure Names");
 		postFormAction(request, "ota", "OTA (update software by WiFi)");
 
 		poststr(request, "<form action=\"/index\">"

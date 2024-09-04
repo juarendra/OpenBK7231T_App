@@ -34,7 +34,7 @@ const char htmlHeadMeta[] =
 const char htmlBodyStart[] =
 "<body>"
 "<noscript>To use this device, please enable JavaScript.<br></noscript>"
-"<div id=\"main\">"
+"<div id=\"main\" style=\"display: flex; flex-direction: row; align-items: center; justify-content: center;\">"
 "<h1>"
 "<a target=\"_blank\" href=\"https://www.gspe.co.id/\">";
 const char htmlBodyStart2[] =
