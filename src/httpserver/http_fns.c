@@ -843,7 +843,7 @@ typedef enum {
 	}
 #endif
 	if (CFG_GetMQTTHost()[0] == 0) {
-		hprintf255(request, "<h5>MQTT State Testing1: not configured<br>");
+		hprintf255(request, "<h5>MQTT State: not configured<br>");
 	}
 	else {
 		const char* stateStr;
@@ -918,6 +918,11 @@ typedef enum {
 
 		// Shared UI elements 
 		poststr(request, "<form action=\"cfg\"><input type=\"submit\" value=\"Config\"/></form>");
+		postFormAction(request, "cfg_wifi", "Configure WiFi &amp; Web");
+		postFormAction(request, "cfg_ip", "Configure IP");
+		postFormAction(request, "cfg_mqtt", "Configure MQTT");
+		postFormAction(request, "cfg_name", "Configure Names");
+		postFormAction(request, "ota", "OTA (update software by WiFi)");
 
 		poststr(request, "<form action=\"/index\">"
 			"<input type=\"hidden\" id=\"restart\" name=\"restart\" value=\"1\">"
