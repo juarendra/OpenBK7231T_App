@@ -49,15 +49,7 @@ const char htmlFooterReturnToCfgOrMainPage[] =
 
 const char htmlFooterInfo[] =
 "<a target=\"_blank\" "
-"href=\"https://www.elektroda.com/rtvforum/forum390.html\">Forum</a> | "
-"<a target=\"_blank\" "
-"href=\"https://www.youtube.com/@elektrodacom/videos\">YT</a> | "
-"<a target=\"_blank\" "
-"href=\"https://openbekeniot.github.io/webapp/devicesList.html\">Devices List</a> | "
-"<a target=\"_blank\" "
-"href=\"https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/README.md\">Docs</a> | "
-"<a target=\"_blank\" "
-"href=\"https://paypal.me/openshwprojects\">Support Project</a><br>";
+"href=\"https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/README.md\">Docs</a><br>";
 
 const char* g_build_str = "Built on " __DATE__ " " __TIME__ " version " USER_SW_VER; // Show GIT version at Build line;
 
@@ -277,7 +269,7 @@ void http_html_end(http_request_t* request) {
 
 	snprintf(upTimeStr, sizeof(upTimeStr), "<br>Device MAC: %02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 	poststr(request, upTimeStr);
-	snprintf(upTimeStr, sizeof(upTimeStr), "<br>Short name: %s, Chipset %s", CFG_GetShortDeviceName(), PLATFORM_MCU_NAME);
+	snprintf(upTimeStr, sizeof(upTimeStr), "<br>Smart Plug By Graha Sumber Prima Elektronik (GSPE)");
 	poststr(request, upTimeStr);
 
 	poststr(request, htmlBodyEnd);
