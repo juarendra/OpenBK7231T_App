@@ -252,7 +252,9 @@ void http_html_start(http_request_t* request, const char* pagename) {
 	poststr(request, htmlHeadStyle);
 	poststr(request, "</head>");
 	poststr(request, htmlBodyStart);
-	poststr(request, "GSPE IOT SMART PLUG");
+	poststr(request, "GSPE IOT ");
+	poststr(request, CFG_GetDeviceName());
+	
 	poststr(request, htmlBodyStart2);
 }
 
@@ -271,7 +273,7 @@ void http_html_end(http_request_t* request) {
 
 	snprintf(upTimeStr, sizeof(upTimeStr), "<br>Device MAC: %02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 	poststr(request, upTimeStr);
-	snprintf(upTimeStr, sizeof(upTimeStr), "<br>Smart Plug By Graha Sumber Prima Elektronik (GSPE)");
+	snprintf(upTimeStr, sizeof(upTimeStr), "<br>Smart Device IOT By Graha Sumber Prima Elektronik (GSPE)");
 	poststr(request, upTimeStr);
 
 	poststr(request, htmlBodyEnd);
