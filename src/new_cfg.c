@@ -127,7 +127,7 @@ void CFG_SetDefaultConfig() {
 	g_cfg.wifi_pass[0] = 0;
 	// i am not sure about this, because some platforms might have no way to store mac outside our cfg?
 	memcpy(g_cfg.mac,mac,6);
-	strcpy(g_cfg.webappRoot, "https://openbekeniot.github.io/webapp/");
+	strcpy(g_cfg.webappRoot, "https://www.gspe.co.id/");
 	// Long unique device name, like OpenBK7231T_AABBCCDD
 	snprintf(g_cfg.longDeviceName, sizeof(g_cfg.longDeviceName), DEVICENAME_PREFIX_FULL"_%02X%02X%02X%02X",mac[2],mac[3],mac[4],mac[5]);
 	snprintf(g_cfg.shortDeviceName, sizeof(g_cfg.shortDeviceName), DEVICENAME_PREFIX_SHORT"%02X%02X%02X%02X",mac[2],mac[3],mac[4],mac[5]);
