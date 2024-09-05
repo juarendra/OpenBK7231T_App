@@ -34,7 +34,7 @@ extern "C" {
  * @{
  */
 /** @brief   This macro defines the HTTP port.  */
-#define HTTP_PORT   80
+#define HTTP_PORT   8000
 
 /** @brief   This macro defines the HTTPS port.  */
 #define HTTPS_PORT 443
