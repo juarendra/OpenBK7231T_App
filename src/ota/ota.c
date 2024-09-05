@@ -208,7 +208,7 @@ void otarequest(const char *urlin){
   client_data->post_buf_len = strlen(post_data);  //Sets the post data length.
   client_data->post_content_type = content_type;  //Sets the content type.
   request->data_callback = &myhttpclientcallback;
-  request->port = 80;//HTTP_PORT;
+  request->port = 8000;//HTTP_PORT;
   request->url = url;
   request->method = HTTPCLIENT_GET;
   request->timeout = 10000;
