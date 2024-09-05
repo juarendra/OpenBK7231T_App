@@ -1247,7 +1247,7 @@ int HTTPClient_Async_SendGet(const char *url_in, const char *tgFile){
 	client_data->post_buf_len = 0;  //Sets the post data length.
 	client_data->post_content_type = "text/csv";  //Sets the content type.
 	request->data_callback = 0;
-	request->port = 8000;//HTTP_PORT;
+	request->port = 80;//HTTP_PORT;
 	request->url = url;
 	request->method = HTTPCLIENT_GET;
 	request->timeout = 10000;
