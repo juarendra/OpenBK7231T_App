@@ -163,7 +163,7 @@ int httpclient_parse_host(const char *url, char *host, int *port, uint32_t maxho
     } else {
         if (!strncmp(url, "HTTP://", 7)){
             ADDLOG_INFO(LOG_FEATURE_HTTP_CLIENT, "HTTP:// found -> port 80\r\n");
-            *port = 80;
+            *port = 8000;
         }
     }
 
