@@ -18,6 +18,8 @@
 	"prettier.printWidth": 120,
 	"files.associations": {
 		"typeindex": "c",
-		"typeinfo": "c"
+		"typeinfo": "c",
+		"logging.h": "c",
+		"new_http.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 #include "../logging/logging.h"
 #include "new_http.h"
 
-#define HTTP_SERVER_PORT            80
+#define HTTP_SERVER_PORT            8000
 #define REPLY_BUFFER_SIZE			2048
 #define INCOMING_BUFFER_SIZE		1024
 
